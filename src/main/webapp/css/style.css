@@ -385,16 +385,14 @@ footer .icon{
   text-align: start;
   padding: 12px 0;
 }
-
-#product1 .pro .des h6{
+#product1 .pro .des span{
+  color: dimgray;
+  font-size: 20px;
+}
+#product1 .pro .des span{
   color: black;
   font-size: 20px;
   padding-top: 10px;
-
-  width: 180px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 #product1 .pro .des i{
   color: #fbff00;
@@ -578,7 +576,7 @@ a, a:hover, a:visited, a:active{
   color:white;
   border-radius: 12px;
   width:150px;
-  height:47px;
+  height:50px;
   transition:0.3s ease;padding: 10px 20px;
 }
 #cart-add button:hover{
@@ -595,8 +593,8 @@ a, a:hover, a:visited, a:active{
   border-radius: 12px;
 }
 #subtotal{
-  width:50%;
-  border-radius: 12px;
+  width:100%;
+  margin-left: 390px;
   padding: 30px;
 }
 #subtotal table{
@@ -636,7 +634,7 @@ a, a:hover, a:visited, a:active{
   padding: 50px;
   background-color: white;
   margin-left:20px;
-  margin-top: 35px;
+  max-height:480px;
 }
 #login-section p{
   color: black;
@@ -664,8 +662,8 @@ a, a:hover, a:visited, a:active{
   transition: 0.3s ease;
   border-radius: 12px;
   border: 1px solid black;
-  margin-top: 63px;
-  margin-right: 10%;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 #login-section button:hover{
   background-color: lightcyan;
@@ -787,6 +785,10 @@ a, a:hover, a:visited, a:active{
 #signin-section button:hover{
   background-color: lightcyan;
   color:black;
+}
+#signin-section .sign{
+  display:flex;
+  align-items: flex-start;
 }
 input[type=submit]{
   background-color: var(--dark-green);
