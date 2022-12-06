@@ -43,7 +43,7 @@
   <div id="signin-section">
     <form action="signin" method="post">
       <input type="hidden" value="add" name="action">
-      <div>
+      <div class="sign">
       <div>
         <p>Họ</p>
         <input type="text" placeholder="Họ" name="lastName" required>
@@ -61,7 +61,7 @@
         <input type="password" placeholder="Password" name="password" required>
       </div>
 
-      <input type="submit" value="Đăng kí">
+      <input style="position: relative; top:175px;"  type="submit" value="Đăng kí">
       </div>
       <div>
         <p style="position:relative;color: red; left:-10%;">${message}</p>
