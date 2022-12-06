@@ -39,6 +39,7 @@
 <!--Body-->
 <section id="signin">
   <button onclick="window.location.href='shop'">Back</button>
+  <div>
   <div id="signin-section">
     <form action="signin" method="post">
       <input type="hidden" value="add" name="action">
@@ -67,12 +68,13 @@
       </div>
     </form>
   </div>
+  </div>
 
 
 </section>
 <footer class="section-p1">
   <div class="col">
-    <img class="logo" src="./assets/Logo-white.png" width="100px" height="100px">
+    <img class="logo" src="assets/logo.png" width="130px" height="130px">
     <h4>Liên hệ</h4>
     <p><strong>Địa chỉ: </strong>01, Võ Văn Ngân, P. Linh Chiểu, TP. Thủ Đức</p>
     <p><strong>Điện thoại: </strong>0767989557 - 0123456789</p>
@@ -83,6 +85,8 @@
     <h4>Giới thiệu</h4>
     <p>Là một trong các cửa hàng mua game uy tín hàng đầu việt nam &#128039;</p>
     <p>Chúng tôi hân hạnh cung cấp cho bạn các tựa game bom tấn với giá rẻ bất ngờ &#128039;</p>
+    <p>Trang web được code bằng tình yêu, mồ hôi, nước mắt, và rất nhiều Cafe <i class="fa fa-coffee"
+        style="font-size:24px"></i></p>
   </div>
   <div>
     <div class="follow">
@@ -96,18 +100,15 @@
     </div>
     <div class="payment">
       <h4>Được bảo mật bởi</h4>
-      <img src="./assets/pay.png">
+      <img src="assets/pay.png">
     </div>
   </div>
 </footer>
 <div class="copyright">
   <p>
-  <center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center>
+    <center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center>
   </p>
 </div>
 
 <script src="./js/main.js"></script>
-
 </body>
-
-</html>

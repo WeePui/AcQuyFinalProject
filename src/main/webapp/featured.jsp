@@ -19,8 +19,11 @@
 
 <body>
   <!--header-->
+  </section>
   <section id="header">
-    <a href="#"><img src="./assets/logo.png" class="logo" alt=""></a>
+    <div>
+      <a href="#"><img src="assets/logo.png" class="logo" alt=""></a>
+    </div>
     <div class="searchbar">
       <form action="search" method="post">
         <input name="searchContent" type="text" placeholder="Từ khoá">
@@ -32,12 +35,12 @@
         <li><a href="index.jsp">HOME</a></li>
         <li><a class="active" href="shop">SHOP</a></li>
         <li><a href="login.jsp">TÀI KHOẢN</a></li>
-        <li><a href="cart.jsp">CART</a></li>
+        <li><a href="cart.jsp">CART(<span>99</span>)</a></li>
       </ul>
     </div>
   </section>
   <!--Body-->
-  <div class="temp">
+   <div class="temp">
     <h2>Featured Products</h2>
     <p>To be added</p>
   </div>
@@ -52,10 +55,11 @@
       </c:forEach>
       <input type="submit" value="Filter">
     </form>
+
     <div class="pro-container">
       <c:forEach var="p" items="${listP}">
         <div class="pro" onclick="window.location.href='detail?gameName=${p.gameName}'">
-          <img src="${p.image}">
+          <img style="width:512px;height:512px;" src="${p.image}">
           <div class="des">
             <span>${p.gameDeveloper}</span>
             <h5>${p.gameName}</h5>
@@ -67,15 +71,12 @@
         </div>
       </c:forEach>
       
-      
     </div>
   </section>
-  <section id="paginamtion" class="section-p1">
-    
-  </section>
+
   <footer class="section-p1">
     <div class="col">
-      <img class="logo" src="./assets/Logo-white.png" width="100px" height="100px">
+      <img class="logo" src="assets/logo.png" width="130px" height="130px">
       <h4>Liên hệ</h4>
       <p><strong>Địa chỉ: </strong>01, Võ Văn Ngân, P. Linh Chiểu, TP. Thủ Đức</p>
       <p><strong>Điện thoại: </strong>0767989557 - 0123456789</p>
@@ -86,6 +87,7 @@
       <h4>Giới thiệu</h4>
       <p>Là một trong các cửa hàng mua game uy tín hàng đầu việt nam &#128039;</p>
       <p>Chúng tôi hân hạnh cung cấp cho bạn các tựa game bom tấn với giá rẻ bất ngờ &#128039;</p>
+      <p>Trang web được code bằng tình yêu, mồ hôi, nước mắt, và rất nhiều Cafe <i class="fa fa-coffee" style="font-size:24px"></i></p>
     </div>
     <div>
       <div class="follow">
@@ -99,16 +101,15 @@
       </div>
       <div class="payment">
         <h4>Được bảo mật bởi</h4>
-        <img src="./assets/pay.png">
+        <img src="assets/pay.png">
       </div>
     </div>
   </footer>
   <div class="copyright">
     <p>
-          <p><center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center></p>
+      <center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center>
     </p>
   </div>
-
   <script src="./js/main.js"></script>
 
 </body>

@@ -157,7 +157,9 @@ button:hover{
 #navbar li a span{
   color:lightyellow;
 }
-
+#navbar li a span:hover{
+  color:lightyellow;
+}
 #hero{
     height: 80vh;
     /* width: 100%; */
@@ -558,13 +560,8 @@ a, a:hover, a:visited, a:active{
 }
 #cart-add {
   display:flex;
-  flex-wrap:wrap ;
-  justify-content: space-between;
+  align-content: center;
   color:white;
-}
-#coupon{
-  width:50%;
-  margin-bottom: 30px;
 }
 #cart-add h3{
   font-size: 30px;
@@ -600,7 +597,6 @@ a, a:hover, a:visited, a:active{
   width:50%;
   border-radius: 12px;
   padding: 30px;
-  background-color: rgba(100, 100, 100, 0.3);
 }
 #subtotal table{
   border-collapse: collapse;
