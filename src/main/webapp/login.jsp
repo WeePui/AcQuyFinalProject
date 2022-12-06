@@ -55,8 +55,7 @@
           </div>
           <p style="color: red;">Sai tên đăng nhập hoặc mật khẩu</p>
         </form>
-        <button style="position: relative; left: 157px; bottom: 161px;" onclick="document.location='sign.jsp'">Đăng
-          kí</button>
+        <button style="position: relative; left: 157px; bottom: 161px;" onclick="document.location='sign.jsp'">Đăng kí</button>
       </div>
     </div>
 </section>
