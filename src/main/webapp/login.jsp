@@ -43,23 +43,22 @@
   <div id="login-banner">
     <img src="assets/Poster3.png" width="850px">
   </div>
-    <div  style="width:560px;" id="login-section">
-      <form action="login" method="post">
-        <input type="hidden" value="add" name="action">
-        <div>
-        <p>Tên đăng nhập</p>
-        <input type="text" placeholder="Tên đăng nhập" name="userName" required>
-        <p>Mật khẩu</p>
-        <input type="password" placeholder="Password" name="password" required>
-        <p style="color: red;">${message}</p>
-      </div>
+    <div style="width:402px;" id="login-section">
       <div>
-        <input type="submit" value="Đăng nhập">
+        <form>
+          <p>Tên đăng nhập</p>
+          <input type="text" placeholder="Tên đăng nhập">
+          <p>Mật khẩu</p>
+          <input type="password" placeholder="Password">
+          <div>
+            <button onclick="LoginFunc()">Đăng nhập</button>
+          </div>
+          <p style="color: red;">Sai tên đăng nhập hoặc mật khẩu</p>
+        </form>
+        <button style="position: relative; left: 157px; bottom: 161px;" onclick="document.location='sign.html'">Đăng
+          kí</button>
       </div>
-
-      </form>
-      <button style="position: relative; left: -134px; bottom: -113.5px"  onclick="document.location='sign.jsp'">Đăng kí</button>
-  </div>
+    </div>
 </section>
 <footer class="section-p1">
   <div class="col">
