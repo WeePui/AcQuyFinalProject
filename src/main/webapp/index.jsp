@@ -29,10 +29,10 @@
     </div>
     <div>
       <ul id="navbar">
-        <li><a class="active" href="index.html">HOME</a></li>
-        <li><a href="featured.html">SHOP</a></li>
-        <li><a href="login.html">TÀI KHOẢN</a></li>
-        <li><a href="cart.html">CART(<span>99</span>)</a></li>
+        <li><a class="active" href="index.jsp">HOME</a></li>
+        <li><a href="featured.jsp">SHOP</a></li>
+        <li><a href="login.jsp">TÀI KHOẢN</a></li>
+        <li><a href="cart.jsp">CART(<span>99</span>)</a></li>
       </ul>
     </div>
   </section>
