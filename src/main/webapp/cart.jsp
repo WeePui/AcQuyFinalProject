@@ -40,7 +40,7 @@
   </section>
   <!--Body-->
   <section id="cart" class="section-p1">
-    <button onclick=""document.location='featured.jsp'"></button>">Back</button>
+    <button onclick="document.location='featured.jsp'"></button>">Back</button>
     <table width="1480px">
       <thead>
         <tr>
