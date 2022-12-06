@@ -353,7 +353,7 @@ footer .icon{
 }
 #product1 .pro-container{
   display: flex;
-  align-items: left;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-right: 100px;
@@ -385,14 +385,16 @@ footer .icon{
   text-align: start;
   padding: 12px 0;
 }
-#product1 .pro .des span{
-  color: dimgray;
-  font-size: 20px;
-}
-#product1 .pro .des span{
+
+#product1 .pro .des h6{
   color: black;
   font-size: 20px;
   padding-top: 10px;
+
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #product1 .pro .des i{
   color: #fbff00;
@@ -417,7 +419,6 @@ footer .icon{
   text-overflow: ellipsis;
 }
 #product1 .pro .cart{
-  margin: right;
   width:40px;
   height:40px;
   line-height:42.5px;

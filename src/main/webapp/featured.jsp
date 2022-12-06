@@ -59,9 +59,9 @@
     <div class="pro-container">
       <c:forEach var="p" items="${listP}">
         <div class="pro" onclick="window.location.href='detail?gameName=${p.gameName}'">
-          <img style="width:512px;height:512px;" src="${p.image}">
+          <img style="width:224px;height:224px;" src="${p.image}">
           <div class="des">
-            <span>${p.gameDeveloper}</span>
+            <h6>${p.gameDeveloper}</h6>
             <h5>${p.gameName}</h5>
             <h4>${p.price}</h4>
           </div>
