@@ -29,7 +29,8 @@ h1{
 h2{
   font-size: 42px;
   line-height: 54px;
-  color: var(--light);
+  color: var(--dark);
+  text-align: center;
 }
 h4{
   font-size: 20px;
@@ -41,11 +42,11 @@ h6{
 }
 p{
   font-size: 16px;
-  color: var(--light);
+  color: var(--dark);
   margin: 15px 0 20px 0;
   text-align: center;
 }
-.temp p, h2{
+.temp p h2{
   text-align: center;
   color: black;
   margin-top: 20px;
@@ -82,7 +83,7 @@ button:hover{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 20px 80px;
+  padding: 0px 80px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
   z-index: 999;
   position: sticky;
@@ -90,8 +91,8 @@ button:hover{
   left: 0%;
 }
 .logo{
-  width: 100px;
-  height: 100px
+  width: 130px;
+  height: 130px
 }
 .searchbar{
   display: flex;
@@ -114,7 +115,7 @@ button:hover{
   padding: 15px 20px;
   transition: 0.3s ease;
   border-radius: 12px;
-
+  
 }
 .searchbar button:hover{
   background-color: #545454;
@@ -124,7 +125,7 @@ button:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-
+  margin-left: 500px;
 }
 #navbar li{
   list-style: none;
@@ -133,40 +134,38 @@ button:hover{
 }
 #navbar li a{
   text-decoration: none ;
-  font-size: 32px;
+  font-size: 22px;
   font-family: var(--play);
-  font-weight: 600;
   color: var(--light);
   transition: 0.3s ease ;
 }
 #navbar li a:hover, #navbar li a.active{
-  color:dimgray
+  color:cyan;
 }
 #navbar li a.active::after, #navbar li a:hover::after
 {
   content: "";
-  width: 60px;
+  width: 30px;
   height: 6px;
-  background-color: dimgray;
+  background-color: cyan;
   position: absolute;
+  border-radius: 12px;
   bottom: -10px;
   left: 20px;
+  transition: 0.3s ease ;
 }
 #navbar li a span{
   color:lightyellow;
 }
 
 #hero{
-  background-image: url("/assets/Hero.png");
-  background-size: cover;
-  background-position: top 25% right 0;
-  height: 90vh;
-  width: 100%;
-  padding: 0 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+    height: 80vh;
+    /* width: 100%; */
+    padding: 150px 286px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
 }
 #hero a{
   text-decoration: none;
@@ -174,19 +173,34 @@ button:hover{
 }
 #hero h4{
   padding-bottom: 14px;
+  padding-top:150px;
+  text-align: left;
+}
+#hero h2{
+  color:white;
+  text-align: left;
 }
 #hero h1{
   color: red;
+  text-align: left;
+}
+#hero p{
+  color: white;
+  
+  text-align: left;
 }
 #hero button{
-  background-image: url("/assets/button.png");
-  background-color: transparent;
-  border:0;
-  padding: 20px 80px 20px 65px;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  font-weight:700;
-  font-size: 15px;
+  background-color:var(--neon-blue);
+  border-radius:45%;
+  border: 1px solid black;
+  font-size: 25px;
+  transition: 0.3s ease;
+}
+#hero button a{
+  padding: 10px 50px 10px 50px;
+}
+#hero button a:hover{
+  color: var(--dark) !important;
 }
 #features {
   display: flex;
@@ -199,16 +213,16 @@ button:hover{
   text-align: center;
   padding: 25px 15px;
   box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.1);
-  border: 1px solid dimgray;
+  border: 1px solid dimgray; 
   border-radius: 4px;
   margin: 15px 0;
   transition: 0.3s ease ;
   background-color: var(--light-gray);
 }
 #features .fe-box:hover{
-
+  
   box-shadow: 0px 10px 54px rgba(0, 0, 0, 0.3);
-  border: 1px solid dimgray;
+  border: 1px solid dimgray; 
   border-radius: 4px;
   margin: 15px 0;
 }
@@ -222,16 +236,18 @@ button:hover{
   border-radius: 4px;
   color: var(--light);
   background-color: 	#5A5A5A;
-
+  
+}
+.galaxy{
+  background-image: url('/assets/Poster.png');
+  background-attachment: fixed;
+  background-color: #13132e;
 }
 #newcommer{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
-  background-image: url(/assets/Poster.png);
-  background-attachment: fixed;
-  background-color: #13132e;
 }
 #newcommer h4{
   font-size: 32px;
@@ -241,6 +257,7 @@ button:hover{
 #newcommer p{
   font-size: 22px;
   font-weight: 700;
+  color:white;
 }
 #newcommer p span{
   color: yellow;
@@ -268,12 +285,11 @@ button:hover{
   border-radius: 12px;
 }
 #newcommer button:hover{
-  background-color: lightgreen;
+  background-color: lightgreen;  
 }
 footer{
   background-color: white;
   display: flex;
-
   justify-content: space-evenly;
 }
 footer col{
@@ -282,24 +298,21 @@ footer col{
   align-items: flex-start;
   margin-bottom: 20px;
 }
-footer p, h4{
-  color: black;
-}
 footer h4{
-  font-size: 22px;
+  font-size: 24px;
   padding: 20px 0 20px 0;
+  color:black;
 }
 footer p{
   margin: 0 0 8px 0;
-  font-size: 16px;
+  font-size: 19px;
+  color:black;
+  text-align: left;
 }
 footer a{
   font-size:  20px;
   text-decoration: none;
   margin-bottom:  10px;
-}
-footer .logo{
-  margin-bottom: 30px;
 }
 
 footer .icon{
@@ -310,21 +323,18 @@ footer .icon{
   align-items: center;
   font-size: 18px;
 }
-
-
 #product1{
   text-align:center;
   display: flex;
   margin-left:20px;
-  margin-right:30px;
-
+  margin-right:20px;
 }
-
 #product1 .filter{
   text-align: left;
-  background-color: black;
+  background-color: #3b3b3b;
   color:white;
-  margin-right: 20px;
+  
+  margin-left:100px;
   border:1px solid black;
   border-radius: 18px;
   font-size: 26px;
@@ -341,9 +351,11 @@ footer .icon{
 }
 #product1 .pro-container{
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-right: 100px;
+  margin-left:100px;
 }
 #product1 .pro img{
   width: 100%;
@@ -352,12 +364,15 @@ footer .icon{
 #product1 .pro{
   width:23%;
   min-width:250px;
+  max-height: 400px;
   padding: 10px 12px;
+  
   border: 1px solid;
   border-radius:25px;
   cursor: pointer;
   box-shadow: 20px 20px 30px #878787;
-  margin: 15px;
+  background-color:white;
+  margin: 25px;
   transition: 0.3s ease;
   position: relative;
 }
@@ -385,14 +400,22 @@ footer .icon{
   color: #000000;
   font-size: 22px;
   font-weight:700;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #product1 .pro .des h5{
   color: #000000;
   font-size: 24px;
   font-weight:700;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #product1 .pro .cart{
-  margin-right:0;
+  margin: right;
   width:40px;
   height:40px;
   line-height:42.5px;
@@ -427,10 +450,13 @@ footer .icon{
 #prodetails .single-pro-details h4{
   font-size: 40px;
   padding: 40px 0 10px 0;
+  color:black;
 }
 #prodetails .single-pro-details h2{
   font-size: 80px;
-  padding: 40px 0 10px 0;
+  padding: 40px 0 25px 0;
+  color:black;
+  text-align: left;
 }
 #prodetails .single-pro-details h6{
   font-size: 20px;
@@ -495,8 +521,12 @@ footer .icon{
   text-align:center;
 }
 #cart table td:nth-child(3){
-  width:150px;
+  width:200px;
   text-align:center;
+    
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 #cart table td:nth-child(4){
   width:150px;
@@ -577,7 +607,7 @@ a, a:hover, a:visited, a:active{
   margin-bottom: 20px;
 }
 #cart-add{
-  background-image: url("/assets/Poster.png");
+  background-image: url('/assets/Poster.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -595,7 +625,7 @@ a, a:hover, a:visited, a:active{
   background-color: black;
   color:white;
   border: 1px solid white;
-
+ 
 }
 #login button:hover{
   background-color: white;
@@ -609,7 +639,7 @@ a, a:hover, a:visited, a:active{
   padding: 50px;
   background-color: white;
   margin-left:20px;
-  margin-top: 65px;
+  margin-top: 35px;
 }
 #login-section p{
   color: black;
@@ -658,7 +688,7 @@ a, a:hover, a:visited, a:active{
   border-radius: 250px;
 }
 .public-details table{
-
+  
   border-collapse: collapse;
   table-layout: fixed;
   white-space: nowrap;
@@ -693,7 +723,7 @@ a, a:hover, a:visited, a:active{
 }
 .public-details table tbody tr td{
   padding-top: 15px;
-
+  
 }
 .public-details table tbody tr td{
   font-size:23px;
@@ -772,7 +802,7 @@ input[type=submit]{
   border-radius: 12px;
 }
 input[type=submit]:hover{
-  background-color: lightgreen;
+background-color: lightgreen;  
 }
 
 #manager-table table{
@@ -835,9 +865,9 @@ input[type=submit]:hover{
   width:150px;
   text-align:center;
 }#manager-table table td:nth-child(12){
-   width:150px;
-   text-align:center;
- }
+  width:150px;
+  text-align:center;
+}
 #manager-table table thead{
   border: 1px solid gray;
   border-left: none;
