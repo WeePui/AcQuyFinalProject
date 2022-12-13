@@ -45,18 +45,17 @@
           <input type="hidden" value="add" name="action">
           <div class="sign">
             <div>
-              <p>Họ</p>
-              <input type="text" value="An" name="lastName" readonly>
-              <p>Tên</p>
-              <input type="text" value="Khang" name="firstName" readonly>
+              <p>Họ và Tên</p>
+              <input type="text" style="text-align:center;" value="An Khang" name="lastName" readonly>
+              <p>Địa chỉ</p>
+              <input type="text" style="text-align:center;" value="01, VNN, Thủ thức" name="firstName" readonly>
             </div>
             <div>
-              <p>Steam friend code</p>
-              <input type="text" value="123456" name="steamFriendCode" readonly>
+              <p>Số Điện Thoại</p>
+              <input type="text" style="text-align:center;" value="123456789" name="Số điện thoại" readonly>
               <p>Email</p>
-              <input type="text" value="ditmemay@gmail.com" name="email" readonly>
+              <input type="text" style="text-align:center;" value="ditmemay@gmail.com" name="email" readonly>
             </div>
-
             <input class="logout-btn"  type="submit" value="Đăng xuất">
           </div>
         </form>
