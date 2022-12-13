@@ -47,13 +47,12 @@
   <section id="product1" class="section-p1">
     <form class="filter" action="filter">
       <h6 style="font-size: 46px; color: gold;">Filter</h6>
-      
+      <c:forEach items="${listC}" var="o">
         <div class="gen">
-          <c:forEach items="${listC}" var="o">
           <input type="checkbox" id="gen1" name="checkedItem" value="${o.categoryName}">
           <label>${o.categoryName}</label>
-          </c:forEach>
         </div>
+        </c:forEach>
       
       <input type="submit" value="Filter">
     </form>
