@@ -98,7 +98,7 @@ button:hover{
   display: flex;
 }
 .searchbar input{
-  height: 3.125rem;
+  height: 3.125rem;à
   padding: 0 1.125rem;
   font-size: 20px;
   width: 400px;
@@ -241,7 +241,7 @@ button:hover{
   
 }
 .galaxy{
-  background-image: url('/assets/Poster.png');
+  background-image: url('../assets/Poster.png');
   background-attachment: fixed;
   background-color: #13132e;
 }
@@ -602,7 +602,7 @@ a, a:hover, a:visited, a:active{
   margin-bottom: 20px;
 }
 #cart-add{
-  background-image: url('/assets/Poster.png');
+  background-image: url('../assets/Poster.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
