@@ -40,7 +40,7 @@
   </section>
   <!--Body-->
   <section id="cart" class="section-p1">
-    <button onclick=""document.location='featured.jsp'"></button>">Back</button>
+    <button onclick="document.location='featured.jsp'"></button>">Back</button>
     <table width="1480px">
       <thead>
         <tr>
@@ -62,16 +62,17 @@
       </table>
   </section>
   <section id="cart-add" class="section-p1">
-    <div id="subtotal">
-        <h3>Tổng giỏ hàng</h3>
-        <table>
-          <tr>
-            <td>Tổng: </td>
-            <td>${total}</td>
-          </tr>
-        </table>
-          <button class="normal" onclick="window.location.href='order'">Xác nhận</button>
-      </div>
+     <div id="subtotal">
+      <h3>Tổng giỏ hàng</h3>
+      <table>
+        <tr>
+          <td>Tổng: </td>
+          <td>${total}</td>
+        </tr>
+      </table>
+      <input type="text" placeholder="Nhập Email" required>
+      <button class="normal" onclick="window.location.href='order'">Xác nhận</button>
+    </div>
   </section>
   <footer class="section-p1">
     <div class="col">
