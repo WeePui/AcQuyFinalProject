@@ -44,25 +44,28 @@
     <form action="signin" method="post">
       <input type="hidden" value="add" name="action">
       <div class="sign">
-      <div>
-        <p>Họ</p>
-        <input type="text" placeholder="Họ" name="lastName" required>
-        <p>Tên</p>
-        <input type="text" placeholder="Tên" name="firstName" required>
-        <p>Steam friend code</p>
-        <input type="text" placeholder="Tên" name="steamFriendCode" required>
-      </div>
-      <div>
-        <p>Tên đăng nhập</p>
-        <input type="text" placeholder="Tên đăng nhập" name = "userName" required>
-        <p>Email</p>
-        <input type="text" placeholder="Email" name = "email" required>
-        <p>Mật khẩu</p>
-        <input type="password" placeholder="Password" name="password" required>
-      </div>
-
-      <input style="position: relative; top:175px;"  type="submit" value="Đăng kí">
-      </div>
+            <div>
+              <p>Họ</p>
+              <input type="text" placeholder="Họ" name="lastName" required>
+              <p>Tên</p>
+              <input type="text" placeholder="Tên" name="firstName" required>
+              <p>Số điện thoại</p>
+              <input type="text" placeholder="0123456789" name="phone" required>
+            </div>
+            <div>
+              <p>Tên đăng nhập</p>
+              <input type="text" placeholder="Tên đăng nhập" name="userName" required>
+              <p>Mật khẩu</p>
+              <input type="password" placeholder="Password" name="password" required>
+              <p>Email</p>
+              <input type="text" placeholder="Email" name="email" required>
+            </div>
+            <div>
+              <p>Địa chỉ</p>
+              <input type="text" placeholder="01, VNN, Thủ thức" name="address" required>
+            </div>
+            <input style="position: relative; top:175px;" type="submit" value="Đăng kí">
+          </div>
       <div>
         <p style="position:relative;color: red; left:-10%;">${message}</p>
       </div>
