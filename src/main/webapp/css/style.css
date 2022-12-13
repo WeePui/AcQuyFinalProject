@@ -98,7 +98,7 @@ button:hover{
   display: flex;
 }
 .searchbar input{
-  height: 3.125rem;à
+  height: 3.125rem;
   padding: 0 1.125rem;
   font-size: 20px;
   width: 400px;
@@ -125,7 +125,7 @@ button:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 500px;
+  margin-: 500px;
 }
 #navbar li{
   list-style: none;
@@ -796,7 +796,7 @@ a, a:hover, a:visited, a:active{
 }
 #signin-section .sign{
   display:flex;
-  align-items: left;
+  align-items: flex-start;
 }
 input[type=submit]{
   background-color: var(--dark-green);
@@ -1092,7 +1092,7 @@ table.table .avatar {
 }
 .modal-body{
   display:flex;
-  align-items: left;
+  align-items: flex-start;
   
 }
 .modal .modal-content {
