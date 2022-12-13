@@ -72,8 +72,8 @@
 
       </div>
       <div class="modal-footer">
-        <input size="50" type="submit" class="btn btn-secondary" value="Cancel">
-        <input size="50" type="submit" class="btn btn-success" value="Save">
+        <input size="50" type="submit" value="Cancel">
+        <input size="50" type="submit" value="Save">
       </div>
     </form>
   </section>
