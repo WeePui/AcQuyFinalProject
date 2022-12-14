@@ -65,26 +65,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ManagerControl</servlet-name>
-        <servlet-class>nhom7.controller.ManagerController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ManagerControl</servlet-name>
-        <url-pattern>/manager</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DeleteControl</servlet-name>
-        <servlet-class>nhom7.controller.DeleteController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DeleteControl</servlet-name>
-        <url-pattern>/delete</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>FilterControl</servlet-name>
         <servlet-class>nhom7.controller.FilterController</servlet-class>
     </servlet>
@@ -144,6 +124,16 @@
         <param-name>pass</param-name>
         <param-value>btppgzccigzvddex</param-value>
     </context-param>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.html</location>
+    </error-page>
 
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>

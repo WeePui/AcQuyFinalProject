@@ -19,15 +19,15 @@
 
 <body>
 
-  <!--header-->
-  <section id="header">
-    <a href="#"><img src="assets/logo.png" class="logo" alt=""></a>
-    <div class="searchbar">
-      <form action="search" method="post">
-        <input name="searchContent" type="text" placeholder="Từ khoá">
-        <button type="submit" onclick="window.location.href='search'">Search</button>
-      </form>
-    </div>
+<!--header-->
+<section id="header">
+  <a href="#"><img src="assets/logo.png" class="logo" alt=""></a>
+  <div class="searchbar">
+    <form action="search" method="post">
+      <input name="searchContent" type="text" placeholder="Từ khoá">
+      <button type="submit" onclick="window.location.href='search'">Search</button>
+    </form>
+  </div>
   <div>
     <ul id="navbar">
       <li><a href="index.jsp">HOME</a></li>
@@ -52,22 +52,22 @@
   <div id="login-banner">
     <img src="assets/Poster3.png" width="850px">
   </div>
-    <div style="width:402px;" id="login-section">
-      <div>
-        <form action="login" method="post">
-          <p>Tên đăng nhập</p>
-          <input type="text" placeholder="Tên đăng nhập" name="userName">
-          <p>Mật khẩu</p>
-          <input type="password" placeholder="Password" name="password">
-          <div>
-            <a style="margin-left:19px;" href="sign.jsp">Đăng kí</a>
-            <input style="position:relative; left:59px;  margin-top:10px;" type="submit" value="Đăng nhập">
-          </div>
-          <p style="color: red;">${message}</p>
-        </form>
-        
-      </div>
+  <div style="width:402px;" id="login-section">
+    <div>
+      <form action="login" method="post">
+        <p>Tên đăng nhập</p>
+        <input type="text" placeholder="Tên đăng nhập" name="userName">
+        <p>Mật khẩu</p>
+        <input type="password" placeholder="Password" name="password">
+        <div>
+          <a style="margin-left:19px;" href="sign.jsp">Đăng kí</a>
+          <input style="position:relative; left:59px;  margin-top:10px;" type="submit" value="Đăng nhập">
+        </div>
+        <p style="color: red;">${message}</p>
+      </form>
+
     </div>
+  </div>
 </section>
 <footer class="section-p1">
   <div class="col">
@@ -83,7 +83,7 @@
     <p>Là một trong các cửa hàng mua game uy tín hàng đầu việt nam &#128039;</p>
     <p>Chúng tôi hân hạnh cung cấp cho bạn các tựa game bom tấn với giá rẻ bất ngờ &#128039;</p>
     <p>Trang web được code bằng tình yêu, mồ hôi, nước mắt, và rất nhiều Cafe <i class="fa fa-coffee"
-        style="font-size:24px"></i></p>
+                                                                                 style="font-size:24px"></i></p>
   </div>
   <div>
     <div class="follow">
@@ -103,7 +103,7 @@
 </footer>
 <div class="copyright">
   <p>
-    <center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center>
+  <center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center>
   </p>
 </div>
 
