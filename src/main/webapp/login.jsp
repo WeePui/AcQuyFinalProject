@@ -60,11 +60,12 @@
           <p>Mật khẩu</p>
           <input type="password" placeholder="Password" name="password">
           <div>
-            <input type="submit" value="Đăng nhập">
+            <a style="margin-left:19px;" href="sign.jsp">Đăng kí</a>
+            <input style="position:relative; left:59px;  margin-top:10px;" type="submit" value="Đăng nhập">
           </div>
           <p style="color: red;">${message}</p>
         </form>
-        <a href="sign.jsp">Đăng kí</a>
+        
       </div>
     </div>
 </section>
