@@ -9,3 +9,7 @@
 Web bán game
 
 # Link web nhóm:
+https://something.kolvip48.repl.co/
+
+# Link đồ án cuối kì:
+Test101-env.eba-rknsjirz.us-east-1.elasticbeanstalk.com 
