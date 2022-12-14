@@ -8,15 +8,15 @@
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://remotemysql.com:3306/lT5vrbOJrQ"/>
+                      value="jdbc:mysql://localhost:3306/cuahangbangame"/>
             <property name="javax.persistence.jdbc.user"
-                      value="lT5vrbOJrQ"/>
+                      value="root"/>
             <property name="javax.persistence.jdbc.password"
-                      value="kzjwQslygD"/>
+                      value="14082002Tc"/>
             <property name="javax.persistence.jdbc.driver"
                       value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.schema-generation.database.action"
-                      value="drop-and-create"/>
+                      value="none"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>

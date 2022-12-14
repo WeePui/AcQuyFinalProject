@@ -18,21 +18,31 @@
 </head>
 
 <body>
-<!--header-->
-<section id="header">
-  <a href="#"><img src="./assets/logo.png" class="logo" alt=""></a>
-  <div class="searchbar">
-    <form action="search" method="post">
-      <input name="searchContent" type="text" placeholder="Từ khoá">
-      <button type="submit">Search</button>
-    </form>
-  </div>
+
+  <!--header-->
+  <section id="header">
+    <a href="#"><img src="assets/logo.png" class="logo" alt=""></a>
+    <div class="searchbar">
+      <form action="search" method="post">
+        <input name="searchContent" type="text" placeholder="Từ khoá">
+        <button type="submit" onclick="window.location.href='search'">Search</button>
+      </form>
+    </div>
   <div>
     <ul id="navbar">
       <li><a href="index.jsp">HOME</a></li>
       <li><a href="shop">SHOP</a></li>
-      <li><a class="active" href="login.jsp">TÀI KHOẢN</a></li>
-      <li><a href="cart.jsp">CART</a></li>
+      <li><a class="active" href="account">
+        <c:choose>
+          <c:when test="${sessionScope.customer!=null}">
+            Chào, ${sessionScope.customer.firstName}
+          </c:when>
+          <c:when test="${sessionScope.customer==null}">
+            ĐĂNG NHẬP
+          </c:when>
+        </c:choose>
+      </a></li>
+      <li><a href="cart.jsp">CART(<span>${sessionScope.cart.count}</span>)</a></li>
     </ul>
   </div>
 </section>
@@ -42,27 +52,25 @@
   <div id="login-banner">
     <img src="assets/Poster3.png" width="850px">
   </div>
-    <div id="login-section">
-      <form action="login" method="post">
-        <input type="hidden" value="add" name="action">
-        <div>
-        <p>Tên đăng nhập</p>
-        <input type="text" placeholder="Tên đăng nhập" name="userName" required>
-        <p>Mật khẩu</p>
-        <input type="password" placeholder="Password" name="password" required>
-        <p style="color: red;">${message}</p>
-      </div>
+    <div style="width:402px;" id="login-section">
       <div>
-        <input type="submit" value="Đăng nhập">
+        <form action="login" method="post">
+          <p>Tên đăng nhập</p>
+          <input type="text" placeholder="Tên đăng nhập" name="userName">
+          <p>Mật khẩu</p>
+          <input type="password" placeholder="Password" name="password">
+          <div>
+            <input type="submit" value="Đăng nhập">
+          </div>
+          <p style="color: red;">${message}</p>
+        </form>
+        <a href="sign.jsp">Đăng kí</a>
       </div>
-
-  </form>
-      <button style="position: relative; left: -110px; bottom: -112.5px" onclick="document.location='sign.jsp'">Đăng kí</button>
-  </div>
+    </div>
 </section>
 <footer class="section-p1">
   <div class="col">
-    <img class="logo" src="./assets/Logo-white.png" width="100px" height="100px">
+    <img class="logo" src="assets/logo.png" width="130px" height="130px">
     <h4>Liên hệ</h4>
     <p><strong>Địa chỉ: </strong>01, Võ Văn Ngân, P. Linh Chiểu, TP. Thủ Đức</p>
     <p><strong>Điện thoại: </strong>0767989557 - 0123456789</p>
@@ -73,31 +81,32 @@
     <h4>Giới thiệu</h4>
     <p>Là một trong các cửa hàng mua game uy tín hàng đầu việt nam &#128039;</p>
     <p>Chúng tôi hân hạnh cung cấp cho bạn các tựa game bom tấn với giá rẻ bất ngờ &#128039;</p>
+    <p>Trang web được code bằng tình yêu, mồ hôi, nước mắt, và rất nhiều Cafe <i class="fa fa-coffee"
+        style="font-size:24px"></i></p>
   </div>
   <div>
     <div class="follow">
       <h4>Theo dõi chúng tôi tại</h4>
       <div class="icon">
-        <i class="fab fa-facebook-f fa-2xl"></i>
-        <i class="fab fa-twitter fa-2xl"></i>
-        <i class="fab fa-instagram fa-2xl"></i>
-        <i class="fab fa-youtube fa-2xl"></i>
+        <a href="https://www.facebook.com/weepui.bh/" class="fab fa-facebook-f fa-2xl"></a>
+        <a href="https://twitter.com/weepui_it" class="fab fa-twitter fa-2xl"></a>
+        <a href="https://www.instagram.com/weepui.nouseins/" class="fab fa-instagram fa-2xl"></a>
+        <a href="https://www.youtube.com/channel/UCYYoU1WD5Xhgz_4iOEG2TXQ" class="fab fa-youtube fa-2xl"></a>
       </div>
     </div>
     <div class="payment">
       <h4>Được bảo mật bởi</h4>
-      <img src="./assets/pay.png">
+      <img src="assets/pay.png">
     </div>
   </div>
 </footer>
 <div class="copyright">
   <p>
-  <center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center>
+    <center>@ 2022, Kaiser.inc - AcQuy's all right reserved.</center>
   </p>
 </div>
 
 <script src="./js/main.js"></script>
-
 </body>
 
 </html>

@@ -24,15 +24,15 @@
     <div class="searchbar">
       <form action="search" method="post">
         <input name="searchContent" type="text" placeholder="Từ khoá">
-        <button type="submit">Search</button>
+        <button type="submit" onclick="window.location.href='search'">Search</button>
       </form>
     </div>
     <div>
       <ul id="navbar">
         <li><a class="active" href="index.jsp">HOME</a></li>
-        <li><a href="featured.jsp">SHOP</a></li>
-        <li><a href="login.jsp">TÀI KHOẢN</a></li>
-        <li><a href="cart.jsp">CART(<span>99</span>)</a></li>
+        <li><a href="shop">SHOP</a></li>
+        <li><a href="account">TÀI KHOẢN</a></li>
+        <li><a href="cart.jsp">CART(<span>${sessionScope.cart.count}</span>)</a></li>
       </ul>
     </div>
   </section>
@@ -75,7 +75,7 @@
       </div>
       <div>
         <div class="form">
-          <input type="text" placeholder="Email của bạn">
+          <input type="text" style="text-align: center" placeholder="Tạo tài khoản ngay nào!!" readonly>
           <button onclick="document.location='sign.jsp'" type="button" class="normal">Đăng kí ngay</button>
         </div>
       </div>
@@ -100,10 +100,10 @@
       <div class="follow">
         <h4>Theo dõi chúng tôi tại</h4>
         <div class="icon">
-          <i class="fab fa-facebook-f fa-2xl"></i>
-          <i class="fab fa-twitter fa-2xl"></i>
-          <i class="fab fa-instagram fa-2xl"></i>
-          <i class="fab fa-youtube fa-2xl"></i>
+          <a href="https://www.facebook.com/weepui.bh/" class="fab fa-facebook-f fa-2xl"></a>
+          <a href="https://twitter.com/weepui_it" class="fab fa-twitter fa-2xl"></a>
+          <a href="https://www.instagram.com/weepui.nouseins/" class="fab fa-instagram fa-2xl"></a>
+          <a href="https://www.youtube.com/channel/UCYYoU1WD5Xhgz_4iOEG2TXQ" class="fab fa-youtube fa-2xl"></a>
         </div>
       </div>
       <div class="payment">

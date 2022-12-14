@@ -48,6 +48,14 @@ public class Game implements Serializable {
         this.releaseDate = releaseDate;
     }
 
+    public long getGameID() {
+        return gameID;
+    }
+
+    public void setGameID(long gameID) {
+        this.gameID = gameID;
+    }
+
     public void setDemo1(String demo1) {
         this.demo1 = demo1;
     }

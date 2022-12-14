@@ -8,9 +8,6 @@ import java.util.List;
 @Entity
 @Table(name = "invoices")
 public class Invoice implements Serializable {
-    @ManyToOne
-    private Customer customer;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long invoiceID;
@@ -20,6 +17,15 @@ public class Invoice implements Serializable {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Game> games;
+
+    private boolean isProcessed;
+
+
+    public Invoice(Date invoiceDate, List<Game> games, boolean isProcessed) {
+        this.invoiceDate = invoiceDate;
+        this.games = games;
+        this.isProcessed = isProcessed;
+    }
 
     public Invoice() {
     }
@@ -40,12 +46,20 @@ public class Invoice implements Serializable {
         this.games = games;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public long getInvoiceID() {
+        return invoiceID;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setInvoiceID(long invoiceID) {
+        this.invoiceID = invoiceID;
+    }
+
+    public boolean isProcessed() {
+        return isProcessed;
+    }
+
+    public void setProcessed(boolean processed) {
+        isProcessed = processed;
     }
 
     public long getTotalPrice(){
@@ -59,7 +73,6 @@ public class Invoice implements Serializable {
     @Override
     public String toString() {
         return "Invoice{" +
-                "customer=" + customer +
                 ", invoiceID=" + invoiceID +
                 ", invoiceDate=" + invoiceDate +
                 ", games=" + games +

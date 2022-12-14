@@ -35,9 +35,10 @@ public class SignInController extends HttpServlet {
             String firstName = req.getParameter("firstName");
             String lastName = req.getParameter("lastName");
             String email = req.getParameter("email");
-            String steamFriendCode = req.getParameter("steamFriendCode");
+            String phoneNumber = req.getParameter("phoneNumber");
+            String address = req.getParameter("address");
 
-            Customer customer = new Customer(userName, password, lastName, firstName, email, steamFriendCode);
+            Customer customer = new Customer(userName, password, lastName, firstName, email, phoneNumber, address, false);
 
             String message = "";
 
@@ -47,18 +48,15 @@ public class SignInController extends HttpServlet {
             } else if (CustomerDB.userNameExists(customer.getUserName())) {
                 url = "/sign.jsp";
                 message = "Tài khoản đã tồn tại vui lòng nhập lại!!!";
-            } else if (CustomerDB.steamFriendCodeExists(customer.getSteamFriendCode())) {
+            } else if (CustomerDB.phoneNumberExists(customer.getPhoneNumber())) {
                 url = "/sign.jsp";
-                message = "Steam Friend Code bạn vừa nhập đã tồn tại trên hệ thống";
+                message = "Số điện thoại bạn vừa nhập đã tồn tại trên hệ thống";
             } else {
-                customer.setAdmin(false);
                 CustomerDB.insert(customer);
 
-                message = "";
+                message = "Bạn đã đăng kí thành công";
 
-                req.setAttribute("alertMsg", "Bạn đã đăng kí thành công");
-
-                url="/index.jsp";
+                url="/login.jsp";
             }
 
             req.setAttribute("message", message);

@@ -24,15 +24,24 @@
     <div class="searchbar">
         <form action="search" method="post">
             <input name="searchContent" type="text" placeholder="Từ khoá">
-            <button type="submit">Search</button>
+            <button type="submit" onclick="window.location.href='search'">Search</button>
         </form>
     </div>
     <div>
         <ul id="navbar">
             <li><a href="index.jsp">HOME</a></li>
             <li><a href="shop">SHOP</a></li>
-            <li><a class="active" href="login.jsp">TÀI KHOẢN</a></li>
-            <li><a href="cart.jsp">CART</a></li>
+            <li><a class="active" href="account">
+                <c:choose>
+                    <c:when test="${sessionScope.customer!=null}">
+                        Chào, ${sessionScope.customer.firstName}
+                    </c:when>
+                    <c:when test="${sessionScope.customer==null}">
+                        ĐĂNG NHẬP
+                    </c:when>
+                </c:choose>
+            </a></li>
+            <li><a href="cart.jsp">CART(<span>${sessionScope.cart.count}</span>)</a></li>
         </ul>
     </div>
 </section>
@@ -41,10 +50,12 @@
     <button onclick="window.location.href='shop'">Back</button>
     <div>
         <div id="signin-section">
+            <input type="hidden" value="add" name="action">
             <div class="sign">
                 <div>
                     <p>Họ và Tên</p>
-                    <input type="text" style="text-align:center;" value="${sessionScope.customer.firstName} ${sessionScope.customer.lastName}" readonly>
+                    <input type="text" style="text-align:center;"
+                           value="${sessionScope.customer.lastName} ${sessionScope.customer.firstName}" readonly>
                     <p>Địa chỉ</p>
                     <input type="text" style="text-align:center;" value="${sessionScope.customer.address}" readonly>
                 </div>
@@ -52,9 +63,10 @@
                     <p>Số Điện Thoại</p>
                     <input type="text" style="text-align:center;" value="${sessionScope.customer.phoneNumber}" readonly>
                     <p>Email</p>
-                    <input type="text" style="text-align:center;" value="${sessionScope.customer.email}" readonly>
+                    <input type="text" style="text-align:center;" value="${sessionScope.customer.email}" name="email"
+                           readonly>
                 </div>
-                <button class="logout-btn" onclick="window.location.href='logout'" type="submit" value="Đăng xuất"/>
+                <button class="logout-btn" onclick="document.location='logout'">Đăng xuất</button>
             </div>
         </div>
     </div>
@@ -81,10 +93,10 @@
         <div class="follow">
             <h4>Theo dõi chúng tôi tại</h4>
             <div class="icon">
-                <i class="fab fa-facebook-f fa-2xl"></i>
-                <i class="fab fa-twitter fa-2xl"></i>
-                <i class="fab fa-instagram fa-2xl"></i>
-                <i class="fab fa-youtube fa-2xl"></i>
+                <a href="https://www.facebook.com/weepui.bh/" class="fab fa-facebook-f fa-2xl"></a>
+                <a href="https://twitter.com/weepui_it" class="fab fa-twitter fa-2xl"></a>
+                <a href="https://www.instagram.com/weepui.nouseins/" class="fab fa-instagram fa-2xl"></a>
+                <a href="https://www.youtube.com/channel/UCYYoU1WD5Xhgz_4iOEG2TXQ" class="fab fa-youtube fa-2xl"></a>
             </div>
         </div>
         <div class="payment">

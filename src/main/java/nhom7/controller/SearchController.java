@@ -1,6 +1,8 @@
 package nhom7.controller;
 
+import nhom7.DAO.CategoryDB;
 import nhom7.DAO.GameDB;
+import nhom7.business.Category;
 import nhom7.business.Game;
 
 import javax.servlet.ServletException;
@@ -17,7 +19,10 @@ public class SearchController extends HttpServlet {
 
         GameDB gameDB = new GameDB();
         List<Game> games = gameDB.selectGames(searchContent);
+        CategoryDB categoryDB = new CategoryDB();
+        List<Category> categories = categoryDB.selectCategories();
 
+        req.setAttribute("listC", categories);
         req.setAttribute("listP", games);
 
         req.getRequestDispatcher("/featured.jsp").forward(req, resp);

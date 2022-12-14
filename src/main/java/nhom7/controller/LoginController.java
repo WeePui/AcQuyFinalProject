@@ -20,18 +20,17 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userName = req.getParameter("userName");
         String password = req.getParameter("password");
+        String message = "";
 
         Customer customer = CustomerDB.login(userName, password);
         if(customer != null){
             HttpSession session = req.getSession();
             session.setAttribute("customer", customer);
 
-            req.setAttribute("alertMsg", "Bạn đã đăng nhập thành công");
-
             String url = "";
 
             if (customer.isAdmin()){
-                url = "/admin.jsp";
+                url = "/manager.jsp";
                 GameDB gameDB = new GameDB();
                 List<Game> games = gameDB.selectGames();
                 CategoryDB categoryDB = new CategoryDB();
@@ -43,12 +42,14 @@ public class LoginController extends HttpServlet {
                 req.setAttribute("listP", games);
             }
             else {
-                url = "/index.jsp";
+                message = "Bạn đã đăng nhập thành công";
+                req.setAttribute("message", message);
+                url = "/login.jsp";
             }
 
             req.getRequestDispatcher(url).forward(req, resp);
         } else {
-            String message = "Sai tài khoản/mật khẩu";
+            message = "Sai tài khoản/mật khẩu";
 
             req.setAttribute("message", message);
             req.getRequestDispatcher("/login.jsp").forward(req, resp);

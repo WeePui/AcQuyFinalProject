@@ -15,9 +15,8 @@ import java.util.List;
 public class FilterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String categoryName = req.getParameter("categoryName");
+        String categoryName = req.getParameter("checkedItem");
 
-        GameDB gameDB = new GameDB();
         CategoryDB categoryDB = new CategoryDB();
 
         List<Category> categories = categoryDB.selectCategories();

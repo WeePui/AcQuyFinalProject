@@ -19,40 +19,40 @@
 </head>
 
 <body>
-  <!--header-->
-  <section id="header2">
-    <li><a class="logout-btn" href="logout">LOG OUT</a></li>
-  </section>
-  <!--Body-->
+<!--header-->
+<section id="header2">
+  <li><a class="logout-btn" href="logout">LOG OUT</a></li>
+</section>
+<!--Body-->
 
-  <section class="pen">
-    <h2>1. Bảng game</h2>
-    <div >
-      <input type="submit" value="Thêm">
-      <input type="submit" value="Xoá">
-      <input type="submit" value="Sửa">
-      <input type="submit" value="Xem">
-    </div>
-    <h2>2. bảng Khách hàng</h2>
-    <div >
-      <input type="submit" value="Thêm">
-      <input type="submit" value="Xoá">
-      <input type="submit" value="Sửa">
-      <input type="submit" value="Xem">
-    </div>
-    <h2>3. bảng Đơn hàng</h2>
-    <div >
-      <input type="submit" value="Thêm">
-      <input type="submit" value="Xoá">
-      <input type="submit" value="Sửa">
-      <input type="submit" value="Xem">
-    </div>
-    <h2>4. <a>Xem tổng doanh thu</a></h2>
-  </section>
-  
+<section class="pen">
+  <h2>1. Bảng game</h2>
+  <div >
+    <input type="submit" name="action" onclick="window.location.href='addgame.jsp'" value="Thêm">
+    <input type="submit" name="action" onclick="window.location.href='deletegame.jsp'" value="Xoá">
+    <input type="submit" name="action" onclick="window.location.href='updategame.jsp'" value="Sửa">
+    <input type="submit" name="action" onclick="window.location.href='#'" value="Xem">
+  </div>
+  <h2>2. bảng Khách hàng</h2>
+  <div >
+    <input type="submit" value="Thêm">
+    <input type="submit" value="Xoá">
+    <input type="submit" value="Sửa">
+    <input type="submit" value="Xem">
+  </div>
+  <h2>3. bảng Đơn hàng</h2>
+  <div >
+    <input type="submit" value="Thêm">
+    <input type="submit" value="Xoá">
+    <input type="submit" value="Sửa">
+    <input type="submit" value="Xem">
+  </div>
+  <h2>4. <a>Xem tổng doanh thu</a></h2>
+</section>
 
 
-  <script src="./js/main.js"></script>
+
+<script src="./js/main.js"></script>
 </body>
 
 </html>

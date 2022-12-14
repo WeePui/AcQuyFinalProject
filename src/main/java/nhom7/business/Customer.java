@@ -10,28 +10,39 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long customerID;
+
+    @Column(unique = true)
     private String userName;
     private String password;
     private String lastName;
     private String firstName;
+    private String address;
+    private String phoneNumber;
     private String email;
-    private String steamFriendCode;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Invoice> invoices;
     private boolean isAdmin;
 
     public Customer() {
-        lastName = "";
-        firstName = "";
-        email = "";
-        steamFriendCode = "";
     }
 
-    public Customer(String userName, String password, String lastName, String firstName, String email, String steamFriendCode) {
+    public Customer(String userName, String password, String lastName, String firstName, String email, String phoneNumber, String address, boolean isAdmin) {
         this.userName = userName;
         this.password = password;
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
-        this.steamFriendCode = steamFriendCode;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.isAdmin = isAdmin;
+    }
+
+    public long getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(long customerID) {
+        this.customerID = customerID;
     }
 
     public boolean isAdmin() {
@@ -82,22 +93,43 @@ public class Customer implements Serializable {
         this.email = email;
     }
 
-    public String getSteamFriendCode() {
-        return steamFriendCode;
+    public String getAddress() {
+        return address;
     }
 
-    public void setSteamFriendCode(String steamFriendCode) {
-        this.steamFriendCode = steamFriendCode;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public List<Invoice> getInvoices() {
+        return invoices;
+    }
+
+    public void setInvoices(List<Invoice> invoices) {
+        this.invoices = invoices;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
                 "customerID=" + customerID +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
-                ", steamFriendCode='" + steamFriendCode + '\'' +
+                ", invoices=" + invoices +
+                ", isAdmin=" + isAdmin +
                 '}';
     }
 }

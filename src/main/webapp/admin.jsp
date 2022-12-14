@@ -31,9 +31,9 @@
           <div class="col-sm-6">
             <a href="#addGameModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
               <span>Add New Game</span></a>
-            <a href="#deleteGameModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i>
+            <a href="delete" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i>
               <span>Delete</span></a>
-            <a href="#Logout" class="btn btn-danger"><i class="fa fa-sign-out"></i>
+            <a href="logout" class="btn btn-danger"><i class="fa fa-sign-out"></i>
               <span>Logout</span></a>
           </div>
         </div>
@@ -70,6 +70,7 @@
               <td>
                 <img src="${o.image}">
               </td>
+              <td>${o.price}</td>
               <td>${o.description}</td>
               <td>${o.gameDeveloper}</td>
               <td>${o.gamePublisher}</td>
@@ -161,11 +162,11 @@
               </div>
               <div class="form-group">
                 <label>Category</label>
-                <select name="category" class="form-select" aria-label="Default select example">
-                  <c:forEach items="${listC}" var="o">
-                    <option value=${o.categoryName}></option>
-                  </c:forEach>
-                </select>
+                <c:forEach items="${listC}" var="o">
+                  <select name="category" class="form-select" aria-label="Default select example">
+                      <option value=${o.categoryName}></option>
+                  </select>
+                </c:forEach>
               </div>
             </div>
 
@@ -241,8 +242,11 @@
               </div>
               <div class="form-group">
                 <label>Category</label>
-                <select name="category" class="form-select" aria-label="Default select example">
-                </select>
+                <c:forEach items="${listC}" var="o">
+                  <select name="category" class="form-select" aria-label="Default select example">
+                    <option value=${o.categoryName}></option>
+                  </select>
+                </c:forEach>
               </div>
             </div>
 
@@ -259,7 +263,7 @@
   <div id="deleteGameModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form>
+        <form action="delete" method="postu">
           <div class="modal-header">
             <h4 class="modal-title">Delete Product</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

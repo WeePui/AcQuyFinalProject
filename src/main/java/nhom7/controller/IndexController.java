@@ -13,10 +13,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class IndexController extends HttpServlet {
-    protected void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //processRequest(req, resp);
@@ -27,11 +23,6 @@ public class IndexController extends HttpServlet {
 
         List<Game> games = gameDB.selectGames();
         List<Category> categories = categoryDB.selectCategories();
-
-        for (Game game:
-             games) {
-            System.out.println(game.toString());
-        }
 
         req.setAttribute("listP", games);
         req.setAttribute("listC", categories);

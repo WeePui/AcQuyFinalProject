@@ -65,13 +65,13 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>AddControl</servlet-name>
-        <servlet-class>nhom7.controller.AddController</servlet-class>
+        <servlet-name>ManagerControl</servlet-name>
+        <servlet-class>nhom7.controller.ManagerController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>AddControl</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <servlet-name>ManagerControl</servlet-name>
+        <url-pattern>/manager</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -103,6 +103,47 @@
         <servlet-name>OrderControl</servlet-name>
         <url-pattern>/order</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AccountControl</servlet-name>
+        <servlet-class>nhom7.controller.AccountController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AccountControl</servlet-name>
+        <url-pattern>/account</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutControl</servlet-name>
+        <servlet-class>nhom7.controller.LogoutController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LogoutControl</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- SMTP settings -->
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>acquyfinalproject@gmail.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>ayckhfluhxgpoyph</param-value>
+    </context-param>
 
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>

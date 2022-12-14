@@ -1,6 +1,7 @@
 package nhom7.DAO;
 
 import nhom7.business.Customer;
+import nhom7.business.Invoice;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -19,6 +20,22 @@ public class CustomerDB {
             et.commit();
         } catch (Exception e) {
             System.out.println(e);
+        } finally {
+            em.close();
+        }
+    }
+
+    public static void delete(Customer customer){
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+
+        trans.begin();
+        try {
+            em.remove(em.merge(customer));
+            trans.commit();
+        } catch (Exception e) {
+            System.out.println(e);
+            trans.rollback();
         } finally {
             em.close();
         }
@@ -95,12 +112,12 @@ public class CustomerDB {
         return result;
     }
 
-    public static Customer selectCustomerBySteamFriendCode(String steamFriendCode) {
+    public static Customer selectCustomerByPhoneNumber(String phoneNumber) {
         EntityManager em = DBUtil.getEmf().createEntityManager();
         String qString = "SELECT cust FROM Customer cust " +
-                "WHERE cust.steamFriendCode = :steamFriendCode";
+                "WHERE cust.phoneNumber = :phoneNumber";
         TypedQuery<Customer> q = em.createQuery(qString, Customer.class);
-        q.setParameter("steamFriendCode", steamFriendCode);
+        q.setParameter("phoneNumber", phoneNumber);
         Customer result = null;
         try {
             result = q.getSingleResult();
@@ -123,8 +140,8 @@ public class CustomerDB {
         return (cust != null);
     }
 
-    public static boolean steamFriendCodeExists(String steamFriendCode) {
-        Customer cust = selectCustomerBySteamFriendCode(steamFriendCode);
+    public static boolean phoneNumberExists(String phoneNumber) {
+        Customer cust = selectCustomerByPhoneNumber(phoneNumber);
         return (cust != null);
     }
 }

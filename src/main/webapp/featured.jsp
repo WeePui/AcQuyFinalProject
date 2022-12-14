@@ -27,15 +27,23 @@
     <div class="searchbar">
       <form action="search" method="post">
         <input name="searchContent" type="text" placeholder="Từ khoá">
-        <button type="submit">Search</button>
+        <button type="submit" onclick="window.location.href='search'">Search</button>
       </form>
     </div>
     <div>
       <ul id="navbar">
         <li><a href="index.jsp">HOME</a></li>
         <li><a class="active" href="shop">SHOP</a></li>
-        <li><a href="login.jsp">TÀI KHOẢN</a></li>
-        <li><a href="cart.jsp">CART(<span>99</span>)</a></li>
+        <li><a href="account">
+          <c:choose>
+            <c:when test="${sessionScope.customer!=null}">
+              Chào, ${sessionScope.customer.firstName}            </c:when>
+            <c:when test="${sessionScope.customer==null}">
+              ĐĂNG NHẬP
+            </c:when>
+          </c:choose>
+        </a></li>
+        <li><a href="cart.jsp">CART(<span>${sessionScope.cart.count}</span>)</a></li>
       </ul>
     </div>
   </section>
@@ -49,11 +57,11 @@
       <h6 style="font-size: 46px; color: gold;">Filter</h6>
       <c:forEach items="${listC}" var="o">
         <div class="gen">
-          <input type="checkbox" id="gen1" name="checkedItem" value="${o.categoryName}">
+          <input type="radio" id="gen1" name="checkedItem" value="${o.categoryName}">
           <label>${o.categoryName}</label>
         </div>
-        </c:forEach>
-      
+      </c:forEach>
+
       <input type="submit" value="Filter">
     </form>
 
@@ -64,7 +72,7 @@
           <div class="des">
             <h6>${p.gameDeveloper}</h6>
             <h5>${p.gameName}</h5>
-            <h4>${p.price}</h4>
+            <h4>${p.price} VNĐ</h4>
           </div>
           <div class="cart">
             <a href="addToCart?gameName=${p.gameName}&isRemove=false"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -94,10 +102,10 @@
       <div class="follow">
         <h4>Theo dõi chúng tôi tại</h4>
         <div class="icon">
-          <i class="fab fa-facebook-f fa-2xl"></i>
-          <i class="fab fa-twitter fa-2xl"></i>
-          <i class="fab fa-instagram fa-2xl"></i>
-          <i class="fab fa-youtube fa-2xl"></i>
+          <a href="https://www.facebook.com/weepui.bh/" class="fab fa-facebook-f fa-2xl"></a>
+          <a href="https://twitter.com/weepui_it" class="fab fa-twitter fa-2xl"></a>
+          <a href="https://www.instagram.com/weepui.nouseins/" class="fab fa-instagram fa-2xl"></a>
+          <a href="https://www.youtube.com/channel/UCYYoU1WD5Xhgz_4iOEG2TXQ" class="fab fa-youtube fa-2xl"></a>
         </div>
       </div>
       <div class="payment">

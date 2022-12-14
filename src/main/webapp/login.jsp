@@ -25,15 +25,24 @@
     <div class="searchbar">
       <form action="search" method="post">
         <input name="searchContent" type="text" placeholder="Từ khoá">
-        <button type="submit">Search</button>
+        <button type="submit" onclick="window.location.href='search'">Search</button>
       </form>
     </div>
   <div>
     <ul id="navbar">
       <li><a href="index.jsp">HOME</a></li>
       <li><a href="shop">SHOP</a></li>
-      <li><a class="active" href="login.jsp">TÀI KHOẢN</a></li>
-      <li><a href="cart.jsp">CART</a></li>
+      <li><a class="active" href="account">
+        <c:choose>
+          <c:when test="${sessionScope.customer!=null}">
+            Chào, ${sessionScope.customer.firstName}
+          </c:when>
+          <c:when test="${sessionScope.customer==null}">
+            ĐĂNG NHẬP
+          </c:when>
+        </c:choose>
+      </a></li>
+      <li><a href="cart.jsp">CART(<span>${sessionScope.cart.count}</span>)</a></li>
     </ul>
   </div>
 </section>
@@ -45,17 +54,17 @@
   </div>
     <div style="width:402px;" id="login-section">
       <div>
-        <form>
+        <form action="login" method="post">
           <p>Tên đăng nhập</p>
-          <input type="text" placeholder="Tên đăng nhập">
+          <input type="text" placeholder="Tên đăng nhập" name="userName">
           <p>Mật khẩu</p>
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Password" name="password">
           <div>
-            <button onclick="LoginFunc()">Đăng nhập</button>
+            <input type="submit" value="Đăng nhập">
           </div>
-          <p style="color: red;">Sai tên đăng nhập hoặc mật khẩu</p>
+          <p style="color: red;">${message}</p>
         </form>
-        <button style="position: relative; left: 157px; bottom: 161px;" onclick="document.location='sign.jsp'">Đăng kí</button>
+        <a href="sign.jsp">Đăng kí</a>
       </div>
     </div>
 </section>
@@ -79,10 +88,10 @@
     <div class="follow">
       <h4>Theo dõi chúng tôi tại</h4>
       <div class="icon">
-        <i class="fab fa-facebook-f fa-2xl"></i>
-        <i class="fab fa-twitter fa-2xl"></i>
-        <i class="fab fa-instagram fa-2xl"></i>
-        <i class="fab fa-youtube fa-2xl"></i>
+        <a href="https://www.facebook.com/weepui.bh/" class="fab fa-facebook-f fa-2xl"></a>
+        <a href="https://twitter.com/weepui_it" class="fab fa-twitter fa-2xl"></a>
+        <a href="https://www.instagram.com/weepui.nouseins/" class="fab fa-instagram fa-2xl"></a>
+        <a href="https://www.youtube.com/channel/UCYYoU1WD5Xhgz_4iOEG2TXQ" class="fab fa-youtube fa-2xl"></a>
       </div>
     </div>
     <div class="payment">

@@ -25,15 +25,24 @@
     <div class="searchbar">
       <form action="search" method="post">
         <input name="searchContent" type="text" placeholder="Từ khoá">
-        <button type="submit">Search</button>
+        <button type="submit" onclick="window.location.href='search'">Search</button>
       </form>
     </div>
     <div>
       <ul id="navbar">
-        <li><a href="index.jspl">HOME</a></li>
-        <li><a href="featured.jsp">SHOP</a></li>
-        <li><a href="login.jsp">TÀI KHOẢN</a></li>
-        <li><a class="active" href="cart.jsp">CART</a></li>
+        <li><a href="index.jsp">HOME</a></li>
+        <li><a class="active" href="shop">SHOP</a></li>
+        <li><a href="account">
+          <c:choose>
+            <c:when test="${sessionScope.customer!=null}">
+              Chào, ${sessionScope.customer.firstName}
+            </c:when>
+            <c:when test="${sessionScope.customer==null}">
+              ĐĂNG NHẬP
+            </c:when>
+          </c:choose>
+        </a></li>
+        <li><a href="cart.jsp">CART(<span>${sessionScope.cart.count}</span>)</a></li>
       </ul>
     </div>
   </section>
@@ -41,7 +50,7 @@
   <section id="prodetails" class="section-p1">
 
     <div class="single-pro-img">
-      <button onclick="document.location='featured.jsp'"></button>">Back</button>
+      <button onclick="document.location='shop'">Back</button>
       <img src="${game.demo1}" width="600" height ="400" id="MainImg">
       <div class="small-img-group">
         <div class="small-img-col">
@@ -59,9 +68,9 @@
       </div>
     </div>
     <div class="single-pro-details">
-      <h6><a href="index.html">Home</a></h6>
+      <h6><a href="index.jsp">Home</a></h6>
         <h4>${game.gameName}</h4>
-        <h2>${game.price}</h2>
+        <h2>${game.price} VNĐ</h2>
       <button onclick="window.location.href='addToCart?gameName=${game.gameName}&isRemove=false'" class="normal">Add to cart</button>
         <h4>Product details</h4>
         <span>${game.description}</span>
@@ -110,10 +119,10 @@
       <div class="follow">
         <h4>Theo dõi chúng tôi tại</h4>
         <div class="icon">
-          <i class="fab fa-facebook-f fa-2xl"></i>
-          <i class="fab fa-twitter fa-2xl"></i>
-          <i class="fab fa-instagram fa-2xl"></i>
-          <i class="fab fa-youtube fa-2xl"></i>
+          <a href="https://www.facebook.com/weepui.bh/" class="fab fa-facebook-f fa-2xl"></a>
+          <a href="https://twitter.com/weepui_it" class="fab fa-twitter fa-2xl"></a>
+          <a href="https://www.instagram.com/weepui.nouseins/" class="fab fa-instagram fa-2xl"></a>
+          <a href="https://www.youtube.com/channel/UCYYoU1WD5Xhgz_4iOEG2TXQ" class="fab fa-youtube fa-2xl"></a>
         </div>
       </div>
       <div class="payment">
