@@ -13,8 +13,9 @@ public class EmailUtility {
         Properties properties = new Properties();
         properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.port", port);
-        properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.auth", "true");
+
 
         Authenticator auth = new Authenticator() {
             @Override
