@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class CustomerDB {
     public static void insert(Customer customer){
@@ -39,6 +40,22 @@ public class CustomerDB {
         } finally {
             em.close();
         }
+    }
+
+    public List<Customer> selectCustomers() {
+        EntityManager em = DBUtil.getEmf().createEntityManager();
+        String qString = "SELECT customer from Customer customer";
+        TypedQuery<Customer> q = em.createQuery(qString, Customer.class);
+        List<Customer> results = null;
+        try {
+            results = q.getResultList();
+        } catch (NoResultException ex) {
+            return null;
+        } finally {
+            em.close();
+        }
+
+        return results;
     }
 
     public static void update(Customer customer){
