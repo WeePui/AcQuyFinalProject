@@ -71,14 +71,7 @@
   </section>
   <section id="cart-add" class="section-p1">
      <div id="subtotal">
-      <h3>Tổng giỏ hàng</h3>
-      <table>
-        <tr>
-          <td>Tổng: </td>
-          <td>${total} VNĐ</td>
-        </tr>
-      </table>
-      <input type="text" placeholder="Nhập Email" required>
+      <h3>Tổng giỏ hàng ${total} VNĐ</h3>
       <button class="normal" onclick="window.location.href='order'">Xác nhận</button>
     </div>
   </section>
