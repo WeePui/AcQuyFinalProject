@@ -69,7 +69,19 @@ public class OrderController extends HttpServlet {
 
                 String subject = "Cảm ơn bạn đã mua hàng";
                 //HTML
-                String content = "";
+                String content = "<!doctype html>\n" +
+                        "<html lang=\"en\">\n" +
+                        "<head>\n" +
+                        "  <meta charset=\"utf-8\">\n" +
+                        "</head>\n" +
+                        "<body>\n" +
+                        "  <p>Xin chao "+ firstName + " " + lastName +"</p>\n" +
+                        "  <p>Cam on ban vi da mua hang cua chung toi</p>\n" +
+                        "  <p>Thong tin don hang cua ban nhu sau:</p>\n" +
+                        "  <p>Tong gio hang: "+ total +"</p>\n" +
+                        "  <p>Hen gap lai ban trong thòi!</p>\n" +
+                        "</body>\n" +
+                        "</html>";
 
                 try {
                     EmailUtility.sendMail(host, port, user, pass, email, subject, content);
